@@ -54,9 +54,9 @@ public class CommandDead implements CommandExecutor {
                 if (dead) {
                     TimeCheck timeCheck = new TimeCheck(timeToResurrection - System.currentTimeMillis());
                     if (System.currentTimeMillis() > timeToResurrection) {
-                        responses[index] = playerName + " will resurrect when they rejoin.";
+                        responses[index] = playerName + " resucitarán cuando se reincorporen.";
                     } else {
-                        responses[index] = playerName + " will resurrect in " + timeCheck.formatTime('f');
+                        responses[index] = playerName + " resucitará en " + timeCheck.formatTime('f');
                     }
                     index++;
                 }
@@ -67,11 +67,11 @@ public class CommandDead implements CommandExecutor {
         if (commandSender instanceof Player) {
             Player p = (Player) commandSender;
             if (amountDead == 0) {
-                p.sendMessage(ChatColor.YELLOW + "There are currently no players awaiting resurrection.");
+                p.sendMessage(ChatColor.YELLOW + "Actualmente no hay jugadores en espera de resurrección.");
             } else if (amountDead == 1) {
-                p.sendMessage(ChatColor.YELLOW + "There is currently 1 player awaiting resurrection:");
+                p.sendMessage(ChatColor.YELLOW + "Actualmente hay 1 jugador en espera de resurrección:");
             } else if (amountDead >= 2) {
-                p.sendMessage(ChatColor.YELLOW + "There are currently " + amountDead + " players awaiting resurrection:");
+                p.sendMessage(ChatColor.YELLOW + "Actualmente existen " + amountDead + " jugadores a la espera de la resurrección:");
             }
             if (amountDead > 0) {
                 for (String response : responses) {
@@ -81,11 +81,11 @@ public class CommandDead implements CommandExecutor {
             
         } else {
             if (amountDead == 0) {
-                log.info("There are currently no players awaiting resurrection.");
+                log.info("Actualmente no hay jugadores en espera de resurrección.");
             } else if (amountDead == 1) {
-                log.info("There is currently 1 player awaiting resurrection:");
+                log.info("Actualmente hay 1 jugador en espera de resurrección:");
             } else if (amountDead >= 2) {
-                log.info("There are currently " + amountDead + " players awaiting resurrection:");
+                log.info("Actualmente existen " + amountDead + " jugadores a la espera de la resurrección:");
             }
             if (amountDead > 0) {
                 for (String response : responses) {
