@@ -58,7 +58,7 @@ public class CommandHowLong implements CommandExecutor {
                 } else {
                     p = Bukkit.getPlayer(strings[0]);
                     if (p == null) {
-                        commandSender.sendMessage(ChatColor.RED + "ERROR: That player is not online/doesn't exist!");
+                        commandSender.sendMessage(ChatColor.RED + "ERROR: Ese jugador no está en línea/no existe.");
                         return false;
                     }
 
@@ -83,16 +83,16 @@ public class CommandHowLong implements CommandExecutor {
 
                             TimeCheck timeCheck = new TimeCheck(resurrectionTime - currentTime);
                             if (self) {
-                                commandSender.sendMessage(ChatColor.YELLOW + "You will respawn in " + timeCheck.formatTime('f'));
+                                commandSender.sendMessage(ChatColor.YELLOW + "Reaparecerás en " + timeCheck.formatTime('f'));
                             } else {
-                                commandSender.sendMessage(ChatColor.YELLOW + p.getDisplayName() + " will respawn in " + timeCheck.formatTime('f'));
+                                commandSender.sendMessage(ChatColor.YELLOW + p.getDisplayName() + " reaparecerá en " + timeCheck.formatTime('f'));
                             }
                             return true;
                         } else {
                             if (self) {
-                                commandSender.sendMessage(ChatColor.RED + "ERROR: You aren't dead, dummy.");
+                                commandSender.sendMessage(ChatColor.RED + "ERROR: No estás muerto.");
                             } else {
-                                commandSender.sendMessage(ChatColor.RED + "ERROR: " + p.getDisplayName() + " is not dead!");
+                                commandSender.sendMessage(ChatColor.RED + "ERROR: " + p.getDisplayName() + " no está muerto!");
                             }
                             return false;
                         }
@@ -147,11 +147,11 @@ public class CommandHowLong implements CommandExecutor {
 
                             TimeCheck timeCheck = new TimeCheck(resurrectionTime - currentTime);
 
-                            log.info(p.getDisplayName() + " will respawn in " + timeCheck.formatTime('f'));
+                            log.info(p.getDisplayName() + " reaparecerá en " + timeCheck.formatTime('f'));
 
                             return true;
                         } else {
-                            log.warning("ERROR: " + p.getDisplayName() + " is not dead!");
+                            log.warning("ERROR: " + p.getDisplayName() + " no está muerto!");
                             return false;
                         }
                     }
