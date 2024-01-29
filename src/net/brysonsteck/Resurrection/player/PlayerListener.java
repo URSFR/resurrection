@@ -103,8 +103,8 @@ public class PlayerListener implements Listener {
                 Bukkit.broadcastMessage(ChatColor.YELLOW  +""+ ChatColor.BOLD + "[Res. DEBUG]: Player " + p.getDisplayName() + " is dead; pushing into dead state until resurrection");
             }
 //            spawn = p.getLocation();
-            p.sendMessage(ChatColor.RED + "You are still dead. To check how long you have left before you are resurrected, ");
-            p.sendMessage(ChatColor.RED + "run the \"/howlong\" command in chat.");
+            p.sendMessage(ChatColor.RED + "Sigues muerto. Para comprobar cuánto tiempo te queda antes de resucitar, ");
+            p.sendMessage(ChatColor.RED + "ejecuta el comando "/howlong\" en el chat.");
             new BukkitRunnable() {
                 @Override
                 public void run() {
@@ -289,8 +289,8 @@ public class PlayerListener implements Listener {
             TimeCheck timeCheck = new TimeCheck(Long.parseLong(parseSettings.getSetting("resurrection_time")));
             //playerSpawns.put(p.getDisplayName(), p.getLocation());
             p.setGameMode(GameMode.SPECTATOR);
-            p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "YOU HAVE DIED!!");
-            p.sendMessage(ChatColor.RED + "You will be able to respawn in the next " + timeCheck.formatTime('f'));
+            p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "¡¡HAS MUERTO!!");
+            p.sendMessage(ChatColor.RED + "Usted será capaz de respawn en los próximos " + timeCheck.formatTime('f'));
             if (DEBUG) {
                 Bukkit.broadcastMessage(ChatColor.YELLOW  +""+ ChatColor.BOLD + "[Res. DEBUG]: Applying potions, spectator mode");
             }
